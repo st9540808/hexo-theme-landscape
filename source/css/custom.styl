@@ -1,0 +1,50 @@
+@import "_partial/highlight"
+
+.warning
+  @extend $code-block
+  background-color: #feeeed
+  border-style: solid;
+  color: #db6569
+  border-color: #db6569;
+  border-width: 1px 0;
+  padding-top: 0
+  padding-bottom: 0
+  p
+    margin: 0.4em 0 !important
+  code, figure, pre
+    border-color: #db6569
+    background-color: #fef6f6 !important
+
+.info
+  @extend $code-block
+  background-color: #d2ddf7
+  border-style: solid;
+  color: #424086
+  border-color: #424086;
+  border-width: 1px 0;
+  padding-top: 0
+  padding-bottom: 0
+  p
+    margin: 0.4em 0 !important
+  code, figure, pre
+    background-color: #f5f6fc !important
+    border-color: #424086
+
+.last-modified
+  color: color-grey
+  text-align: right
+  float: right
+  font-size: 0.85em
+  padding-right: 5px
+
+.archive-post-tags
+  clearfix()
+  font-size: 0.9em
+  text-decoration: none
+  float: right
+  text-overflow: ellipsis
+  a
+    color: color-grey
+    text-decoration: none
+    &:hover
+      color: color-default

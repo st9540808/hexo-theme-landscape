@@ -1,0 +1,61 @@
+<% if (site.posts.length){ %>
+  <style>
+  .posts > li > a.name {
+    white-space: initial;
+    overflow: initial;
+    text-overflow: initial;
+    color: #474747;
+    align-content: center;
+    position: relative;
+    display: block;
+    padding: 6px 20px;
+    margin: 0 0 0 0px;
+    line-height: 1.3em;
+  }
+  /* ul.posts {
+    position: relative;
+	  list-style: none;
+	  margin-left: 0;
+	  padding-left: 1.2em;
+  } */
+  /* ul.posts div::before {
+	  position: absolute;
+    font-family: "FontAwesome";
+    content: "\f0f6";
+	  left: 0em;
+  } */
+  .posts li > a:hover {
+    text-decoration: none;
+    background-color: #f4f4f4;
+  }
+  .posts li:hover {
+    background-color: #f4f4f4;
+  }
+  .posts a time {
+    box-sizing: border-box;
+    padding: 0;
+    color: #696969;
+    font-size: .75em;
+  }
+  /* .posts a time::before {
+    font-family: "FontAwesome 5.10";
+    font-weight: 100;
+    content: "\f133    ";
+  } */
+  </style>
+  <div class="widget-wrap">
+    <h3 class="widget-title"><%= __('recent_posts') %></h3>
+    <div class="widget" style="padding: 10px 0px; display: flex;">
+      <ul class="posts">
+        <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
+          <li>
+            <a class="name" href="<%- url_for(post.path) %>">
+              <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, null) %></time>
+              <div><%= post.title || '(no title)' %></div>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+  </div>
+<% } %>

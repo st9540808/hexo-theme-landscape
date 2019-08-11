@@ -1,0 +1,59 @@
+#sidebar
+  @media mq-normal
+    column(sidebar-column)
+
+.widget-wrap
+  margin: block-margin 0
+
+.widget-title
+  @extend $block-caption
+
+.widget-title-tags
+  @extend .widget-title
+  margin-bottom: 0.5em
+
+.widget
+  color: color-sidebar-text
+  text-shadow: 0 0px #fff
+  background: color-widget-background
+  // box-shadow: 0 -1px 40px color-widget-border inset
+  // box-shadow: 1px 1px 0px #f4f4f4
+  border: 1px solid color-widget-border
+  padding: 15px
+  border-radius: 2px
+  a
+    color: color-link
+    text-decoration: none
+    // display: inline-block;
+    margin: 2px 1px 3px 0;
+    // &:hover
+    //   text-decoration: none
+    //   background-color: #f4f4f4
+  li:hover
+    // background-color: lightgray;
+
+  // a
+  //   border-radius: 2px
+  //   text-decoration: none;
+  //   padding: 2px 8px;
+  //   background-color: #909090;
+  //   display: inline-block;
+  //   margin: 2px 1px 3px 0
+  //   color: #eee
+  //   transition: background .2s, color .2s
+  //   position: relative;
+  //   font-size: 13px;
+  //   text-transform: uppercase;
+  //   letter-spacing: 1px;
+  //   transition: background .2s,color .2s;
+  //   transition-property: background, color;
+  //   transition-duration: 0.2s, 0.2s;
+  //   transition-timing-function: ease, ease;
+  //   transition-delay: 0s, 0s;
+  //   &:before
+  //     box-sizing: border-box;
+  //   &:hover
+  ul, ol, dl
+    ul, ol, dl
+      margin-left: 15px
+      list-style: disc

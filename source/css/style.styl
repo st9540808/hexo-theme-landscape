@@ -1,0 +1,177 @@
+@import "nib"
+@import "_variables"
+@import "_util/mixin"
+@import "_util/grid"
+
+global-reset()
+
+input, button
+  margin: 0
+  padding: 0
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+
+@font-face
+  font-family: 'Menlo Regular'
+  font-style: normal
+  font-weight: normal
+  src: local('Menlo Regular'), url('fonts/Menlo-Regular.woff') format('woff');
+
+@font-face
+  font-family: 'NotoSansCJKtc Regular'
+  font-style: normal
+  font-weight: normal
+  src: local('NotoSansCJKtc Regular'), url('fonts/NotoSansCJKtc-Regular.otf') format('opentype')
+
+@font-face
+  font-family: 'Open Sans Regular'
+  font-style: normal
+  font-weight: normal
+  src: local('Open Sans Regular'), url('fonts/OpenSans-Regular.ttf') format('truetype')
+
+// PT Sans
+@font-face
+  font-family: 'PT Sans'
+  src: local('PT Sans'), url('fonts/PTS55F.ttf') format('truetype')
+@font-face
+    font-family: 'PT Sans'
+    src: url("fonts/PTS75F.ttf") format('truetype')
+    font-weight: bold;
+@font-face
+    font-family: 'PT Sans'
+    src: url("fonts/PTS56F.ttf") format('truetype')
+    font-style: italic;
+@font-face
+    font-family: 'PT Sans'
+    src: url("fonts/PTS76F.ttf") format('truetype')
+    font-weight: bold;
+    font-style: italic;
+
+// Titillium Web
+@font-face
+  font-family: 'Titillium Web'
+  src: local('Titillium Web'), url(fonts/TitilliumWeb-Regular.ttf) format('truetype')
+@font-face
+    font-family: 'Titillium Web'
+    src: url("fonts/TitilliumWeb-SemiBold.ttf") format('truetype')
+    font-weight: bold;
+@font-face
+    font-family: 'Titillium Web'
+    src: url("fonts/TitilliumWeb-Italic.ttf") format('truetype')
+    font-style: italic;
+@font-face
+    font-family: 'Titillium Web'
+    src: url("fonts/TitilliumWeb-SemiBoldItalic.ttf") format('truetype')
+    font-weight: bold;
+    font-style: italic;
+
+// Playfair display
+@font-face
+  font-family: 'Playfair Display'
+  src: local('Playfair Display'), url(fonts/PlayfairDisplay-Regular.otf) format('opentype')
+@font-face
+    font-family: 'Playfair Display'
+    src: url("fonts/PlayfairDisplay-Bold.otf") format('opentype')
+    font-weight: bold;
+@font-face
+    font-family: 'Playfair Display'
+    src: url("fonts/PlayfairDisplay-Italic.otf") format('opentype')
+    font-style: italic;
+@font-face
+    font-family: 'Playfair Display'
+    src: url("fonts/PlayfairDisplay-BoldItalic.otf") format('opentype')
+    font-weight: bold;
+    font-style: italic;
+
+// Consolas italic
+@font-face
+  font-family: 'Consolas'
+  src: local('Consolas'), url(fonts/Consolas.ttf) format('truetype')
+@font-face
+  font-family: 'Consolas'
+  font-style: italic;
+  src: url("fonts/Consolas-Italic.ttf") format('truetype')
+
+@font-face
+  font-family: FontAwesome
+  font-style: normal
+  font-weight: normal
+  src: url(font-icon-path + ".eot?v=#" + font-icon-version)
+  src: url(font-icon-path + ".eot?#iefix&v=#" + font-icon-version) format("embedded-opentype"),
+       url(font-icon-path + ".woff?v=#" + font-icon-version) format("woff"),
+       url(font-icon-path + ".ttf?v=#" + font-icon-version) format("truetype"),
+       url(font-icon-path + ".svg#fontawesomeregular?v=#" + font-icon-version) format("svg")
+
+@font-face
+  font-family: "FontAwesome 5.10"
+  font-style: normal
+  font-weight: normal
+  src: url("fonts/fa-regular-400-5_10.ttf") format("truetype")
+
+html, body, #container
+  height: 100%
+
+body
+  background: color-background
+  font: font-size font-sans
+  -webkit-text-size-adjust: 100%
+
+.outer
+  clearfix()
+  max-width: (column-width + gutter-width) * columns + gutter-width
+  margin: 0 auto
+  padding: 0 gutter-width
+
+.inner
+  column(columns)
+
+.left, .alignleft
+  float: left
+
+.right, .alignright
+  float: right
+
+.clear
+  clear: both
+
+#container
+  position: relative
+
+.mobile-nav-on
+  overflow: hidden
+
+#wrap
+  height: 100%
+  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  transition: 0.2s ease-out
+  z-index: 1
+  background: color-background
+  .mobile-nav-on &
+    left: mobile-nav-width
+
+if sidebar and sidebar isnt bottom
+  #main
+    @media mq-normal
+      column(main-column)
+
+if sidebar is left
+  @media mq-normal
+    #main
+      float: right
+
+@import "_extend"
+@import "_partial/header"
+@import "_partial/article"
+@import "_partial/comment"
+@import "_partial/archive"
+@import "_partial/footer"
+@import "_partial/highlight"
+@import "_partial/mobile"
+@import "custom"
+
+if sidebar
+  @import "_partial/sidebar"

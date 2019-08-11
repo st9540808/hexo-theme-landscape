@@ -1,0 +1,20 @@
+<% if (post.photos && post.photos.length){ %>
+  <div class="article-gallery">
+    <div class="article-gallery-photos">
+      <% post.photos.forEach(function(photo, i){ %>
+        <a class="article-gallery-img fancybox" href="<%- url_for(photo) %>" rel="gallery_<%= post._id %>">
+          <img src="<%- url_for(photo) %>" itemprop="image">
+        </a>
+      <% }) %>
+    </div>
+  </div>
+  <div style="text-align: center">
+  <% if (post.photo_name && post.photo_author) { %>
+      <span class="article-gallery-description">— <ins><%= post.photo_name %></ins> by <%= post.photo_author %></span>
+  <% } else if (post.photo_name) { %>
+      <span class="article-gallery-description"><%= post.photo_name %></span>
+  <% } else if (post.photo_author) { %>
+      <span class="article-gallery-description">— art by <%= post.photo_author %></span>
+  <% } %>
+  </div>
+<% } %>
