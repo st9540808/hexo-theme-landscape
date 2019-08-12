@@ -37,6 +37,7 @@ rss: /atom.xml
 # Content
 excerpt_link: Read More
 fancybox: true
+recent_posts_limits: 5
 
 # Sidebar
 sidebar: right
@@ -56,8 +57,10 @@ google_plus:
 
 - **menu** - Navigation menu
 - **rss** - RSS link
+- **banner** - Path of title banner image of page top
 - **excerpt_link** - "Read More" link at the bottom of excerpted articles. `false` to hide the link.
 - **fancybox** - Enable [Fancybox]
+- **recent_posts_limits** - How many posts display in Home page.
 - **sidebar** - Sidebar style. You can choose `left`, `right`, `bottom` or `false`.
 - **widgets** - Widgets displaying in sidebar
 - **google_analytics** - Google Analytics ID
