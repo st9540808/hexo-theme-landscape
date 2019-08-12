@@ -2,7 +2,7 @@
 menu:
   Home: /
   Archives: /archives
-rss: /atom.xml
+# rss: /atom.xml
 banner: "images/banner.jpg"
 
 # Content
@@ -37,3 +37,6 @@ twitter:
 google_plus:
 fb_admins:
 fb_app_id:
+
+valine:
+  - enable: false
