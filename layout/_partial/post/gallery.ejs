@@ -10,11 +10,11 @@
   </div>
   <div style="text-align: center">
   <% if (post.photo_name && post.photo_author) { %>
-      <span class="article-gallery-description">— <ins><%= post.photo_name %></ins> by <%= post.photo_author %></span>
+      <span class="article-gallery-description">— <ins><%= post.photo_name %></ins> by <span style="font-style: italic"><%= post.photo_author %></span></span>
   <% } else if (post.photo_name) { %>
-      <span class="article-gallery-description"><%= post.photo_name %></span>
+      <span class="article-gallery-description">— <%= post.photo_name %></span>
   <% } else if (post.photo_author) { %>
-      <span class="article-gallery-description">— art by <%= post.photo_author %></span>
+      <span class="article-gallery-description">— art by <span style="font-style: italic"><%= post.photo_author %></span></span>
   <% } %>
   </div>
 <% } %>

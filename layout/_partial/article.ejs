@@ -1,5 +1,6 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <div class="article-meta">
+    <% if (!post.category) { post.categories += "no y" } %>
     <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
     <%- partial('post/category') %>
     <% if (post.modified && !(date(post.date, null) == date(post.modified, null))) { %>
