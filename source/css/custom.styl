@@ -1,7 +1,14 @@
 @import "_partial/highlight"
 
-.warning
+$code-block-container
+  margin-top: 20px !important
+  margin-bottom: 20px !important
+  figure
+    margin-bottom: 16px !important
+
+.danger
   @extend $code-block
+  @extend $code-block-container
   background-color: #feeeed
   border-style: solid;
   color: #db6569
@@ -17,6 +24,7 @@
 
 .info
   @extend $code-block
+  @extend $code-block-container
   background-color: #d2ddf7
   border-style: solid;
   color: #424086
@@ -29,6 +37,22 @@
   code, figure, pre
     background-color: #f5f6fc !important
     border-color: #424086
+
+.warning
+  @extend $code-block
+  @extend $code-block-container  
+  background-color: #fcf8e3
+  border-style: solid;
+  color: #8a6d3b
+  border-color: #faebcc;
+  border-width: 1px 0;
+  padding-top: 0
+  padding-bottom: 0
+  p
+    margin: 0.4em 0 !important
+  code, figure, pre
+    background-color: #fffef7 !important
+    border-color: #faebcc
 
 .last-modified
   color: color-grey
